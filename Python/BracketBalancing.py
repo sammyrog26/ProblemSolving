@@ -1,17 +1,9 @@
 def bracketBalancing(expr):
     stack = []
-
-    # Traversing the Expression 
     for char in expr:
         if char in ["(", "{", "["]:
-
-            # Push the element in the stack 
             stack.append(char)
         else:
-
-            # IF current character is not opening 
-            # bracket, then it must be closing. 
-            # So stack cannot be empty at this point. 
             if not stack:
                 return False
             current_char = stack.pop()
@@ -24,11 +16,29 @@ def bracketBalancing(expr):
             if current_char == '[':
                 if char != "]":
                     return False
-
-    # Check Empty Stack 
     if stack:
         return False
     return True
 
 
 print(bracketBalancing("{}[]()"))
+
+
+# """
+# Another Approach
+# """
+#
+#
+# def brackets(expression):
+#     all_br = ['()', '{}', '[]']
+#     while any(x in expression for x in all_br):
+#         for br in all_br:
+#             expression = expression.replace(br, '')
+#             print(expression)
+#     if not expression:
+#         return True
+#     else:
+#         return False
+#
+# print(brackets("{}[[(())]]"))
+
