@@ -22,7 +22,6 @@ def max_profit(prices):
         return
     profit = 0
     for i in range(1, len(prices)):
-        print(prices[i], prices[i-1])
         profit += max(prices[i] - prices[i - 1], 0)
     return profit
 
