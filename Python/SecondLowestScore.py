@@ -13,12 +13,17 @@ eg:
 
 
 def find_lowest_second_lowest(arr):
+    if not arr:
+        return
     score = sorted(set(i[1] for i in arr))[1]
     low = [x[0] for x in arr if x[1] == score]
     low.sort()
 
-    for p in low:
-        print(p)
+    if len(low) == 1:
+        print(low[0])
+    else:
+        for p in low:
+            print(p)
 
 
 if __name__ == "__main__":
