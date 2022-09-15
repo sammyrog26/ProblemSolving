@@ -46,7 +46,7 @@ def is_palindrome_remove_one_char(string):
     if i < j and len(string) % 2 == 0:
         return True
 
-    if is_palindrome2(string[i:j]):
+    if is_palindrome(string[i:j]):
         # remove j char
         return True
     if is_palindrome(string[i+1:j+1]):
