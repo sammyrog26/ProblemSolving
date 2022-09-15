@@ -24,15 +24,13 @@ def divide_into_sub_array(arr):
     target_sum = sum_val / 2
     running_sum = 0
     n = len(arr)
-    result = []
     for i in range(n):
         running_sum += arr[i]
         if running_sum == target_sum:
-            result.append(arr[:i + 1])
-            result.append(arr[i + 1:])
-            return result
+            return arr[:i + 1], arr[i+1:]
+    return None
 
 
 if __name__ == "__main__":
-    l = [1, 2, 3, 4, 5, 5]
+    l = [1, -1]
     print(divide_into_sub_array(l))
