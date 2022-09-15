@@ -16,13 +16,13 @@ def check_anagram(first, second):
 
     first = [each for each in first]
     second = [each for each in second]
-    isNotAnagram = False
     for each_char in first:
         if each_char in second:
             second.remove(each_char)
-        else:
-            isNotAnagram = True
-    return False if isNotAnagram else True
+    if len(second) == 0:
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":
