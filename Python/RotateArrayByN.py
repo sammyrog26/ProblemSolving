@@ -20,6 +20,11 @@ Explanation:
 
 
 def rotate_array_by_n(arr, k):
+    """
+    Brute Force
+        Time Complexity: O(n**2)
+        Space Complexity: O(n)
+    """
     if not arr:
         return
     check = 1
@@ -31,6 +36,23 @@ def rotate_array_by_n(arr, k):
         arr[n - 1] = last
         check = check + 1
     return arr
+
+
+def array_rotate_by_k2(arr, k):
+    """
+    Method 2
+        Time Complexity: O(n)
+        Auxilary Space: O(1)
+    """
+    n = len(arr)
+    k = k % n
+    result = []
+    for i in range(n):
+        if i < k:
+            result.append(arr[n + i - k])
+        else:
+            result.append(arr[i - k])
+    return result
 
 
 if __name__ == "__main__":
