@@ -41,5 +41,21 @@ def find_power_of_three(base, power):
     return x
 
 
+def armstrong_number(num):
+    """
+        Time Complexity O(n):
+    """
+    order = len(str(num))
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+    if num == sum:
+        return True
+    return False
+
+
 if __name__ == "__main__":
-    print(armstrong(1634))
+    print(armstrong_number(1634))
