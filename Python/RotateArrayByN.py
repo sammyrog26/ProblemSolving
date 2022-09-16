@@ -42,20 +42,20 @@ def array_rotate_by_k2(arr, k):
     """
     Method 2
         Time Complexity: O(n)
-        Auxilary Space: O(1)
+        Auxilary Space: O(n)
     """
+    temp = []
     n = len(arr)
-    k = k % n
-    result = []
-    for i in range(n):
-        if i < k:
-            result.append(arr[n + i - k])
-        else:
-            result.append(arr[i - k])
-    return result
+
+    for i in range(k, n):
+        temp.append(arr[i])
+    for i in range(0, k):
+        temp.append(arr[i])
+    a = temp
+    return a
 
 
 if __name__ == "__main__":
     l = [1, 2, 3, 4, 5, 6, 7]
     k = 3
-    print(rotate_array_by_n(l, k))
+    print(array_rotate_by_k2(l, k))
