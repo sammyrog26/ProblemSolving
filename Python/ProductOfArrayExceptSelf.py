@@ -31,6 +31,25 @@ def product_of_array(arr):
 
 
 def product_of_array2(arr):
+    """
+        left[0] = 1
+        left[1] = 1 * 1
+        left[2] = 1 * 2
+        left[3] = 2 * 3
+
+        arr = [4, 3, 2, 1]
+        right[0] = 1
+        right[1] = 1 * 4
+        right[2] = 4 * 3
+        right[2] = 12 * 2
+
+        right =  [24, 12, 4, 1]
+        left  =  [1, 1, 2, 6]
+        left[0] * right[::-1][0] = 24
+        left[1] * right[::-1][1] = 12
+        left[2] * right[::-1][2] = 8
+        left[3] * right[::-1][3] = 6
+    """
     n = len(arr)
     left, right = [1] * n, [1] * n
     product_array = []
