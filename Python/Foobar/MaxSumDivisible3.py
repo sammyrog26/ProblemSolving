@@ -37,4 +37,4 @@ def solution(l):
 
 
 if __name__ == "__main__":
-    solution([3, 1, 4, 1])
+    print(solution([3, 1, 4, 1]))
