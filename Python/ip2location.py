@@ -1,5 +1,4 @@
 import argparse
-import json
 from ipstack import geolookup
 
 
